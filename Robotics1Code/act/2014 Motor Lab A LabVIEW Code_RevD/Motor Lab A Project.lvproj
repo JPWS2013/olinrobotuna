@@ -22,6 +22,7 @@
 		<Item Name="Support subVIs" Type="Folder" URL="../Support subVIs">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="SineControl.vi" Type="VI" URL="../FPGA Bitfiles/SineControl.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
