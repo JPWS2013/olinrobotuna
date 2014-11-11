@@ -817,11 +817,6 @@ InactivityTimeout 60
 						<Item Name="niFPGA Discrete PID.vi" Type="VI" URL="/&lt;vilib&gt;/express/rvi/analysis/control/discrete linear/niFPGA Discrete PID.vi"/>
 						<Item Name="lvSimController.dll" Type="Document" URL="/&lt;vilib&gt;/rvi/Simulation/lvSimController.dll"/>
 					</Item>
-					<Item Name="nimcDMControlLoop_PID(FixedPoint).vi" Type="VI" URL="../ControlLoop PID(FixedPoint).llb/nimcDMControlLoop_PID(FixedPoint).vi"/>
-					<Item Name="_nimcDMControlLoop_Subtract(32.16).vi" Type="VI" URL="../ControlLoop PID(FixedPoint).llb/_nimcDMControlLoop_Subtract(32.16).vi"/>
-					<Item Name="_nimcDMControlLoop_Multiply(32.16).vi" Type="VI" URL="../ControlLoop PID(FixedPoint).llb/_nimcDMControlLoop_Multiply(32.16).vi"/>
-					<Item Name="_nimcDMControlLoop_Add(32.16).vi" Type="VI" URL="../ControlLoop PID(FixedPoint).llb/_nimcDMControlLoop_Add(32.16).vi"/>
-					<Item Name="Quadrature Encoder dX Method (FPGA, Use in SCTL).vi" Type="VI" URL="../Support subVIs/Quadrature Encoder dX Method (FPGA, Use in SCTL).vi"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="PWM Servo position FPGA" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
