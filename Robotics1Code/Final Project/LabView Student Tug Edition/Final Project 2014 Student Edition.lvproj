@@ -1698,7 +1698,7 @@ AddOutputFilter chunkFilter
 			<Item Name="SE FP behavior point to dock.vi" Type="VI" URL="../SE FP behavior point to dock.vi"/>
 			<Item Name="SE FP behavior S-Wall.vi" Type="VI" URL="../SE FP behavior S-Wall.vi"/>
 			<Item Name="SE FP Find red target.vi" Type="VI" URL="../SE FP Find red target.vi"/>
-			<Item Name="Shift GPS Output.vi" Type="VI" URL="../../../../Full Fish Code/Shift GPS Output.vi"/>
+			<Item Name="Shift GPS Output.vi" Type="VI" URL="../Shift GPS Output.vi"/>
 		</Item>
 		<Item Name="FP forebrain VIs" Type="Folder">
 			<Item Name="FP forebrain ACT.vi" Type="VI" URL="../FP forebrain ACT.vi"/>
