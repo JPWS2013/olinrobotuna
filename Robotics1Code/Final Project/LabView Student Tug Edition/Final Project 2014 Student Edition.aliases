@@ -1,11 +1,14 @@
 [ADRIENE]
 ADRIENE = "172.22.11.2"
 
+[BETH]
+BETH = "192.168.1.6"
+
 [CHRISTINE]
 CHRISTINE = "192.168.1.8"
 
 [My Computer]
-My Computer = "10.27.91.14"
+My Computer = "192.168.34.220"
 
 [myRIO-1900]
 myRIO-1900 = "10.0.0.7"
