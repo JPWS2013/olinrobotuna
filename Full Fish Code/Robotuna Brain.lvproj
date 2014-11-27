@@ -214,6 +214,7 @@ AddOutputFilter chunkFilter
 			<Item Name="TUNA FP behavior point to dock.vi" Type="VI" URL="../TUNA FP behavior point to dock.vi"/>
 			<Item Name="TUNA FP behavior S-Wall.vi" Type="VI" URL="../TUNA FP behavior S-Wall.vi"/>
 			<Item Name="TUNA Find red target.vi" Type="VI" URL="../TUNA Find red target.vi"/>
+			<Item Name="myrio_handshake.vi" Type="VI" URL="../myrio_handshake.vi"/>
 		</Item>
 		<Item Name="TUNA forebrain VIs" Type="Folder">
 			<Item Name="TUNA forebrain ACT.vi" Type="VI" URL="../TUNA forebrain ACT.vi"/>
@@ -236,7 +237,6 @@ AddOutputFilter chunkFilter
 			<Item Name="XB Send.vi" Type="VI" URL="../XB Send.vi"/>
 			<Item Name="XB Close.vi" Type="VI" URL="../XB Close.vi"/>
 		</Item>
-		<Item Name="myrio_handshake.vi" Type="VI" URL="../myrio_handshake.vi"/>
 		<Item Name="TUNA RT main.vi" Type="VI" URL="../TUNA RT main.vi"/>
 		<Item Name="myrio_testxbeelink.vi" Type="VI" URL="../myrio_testxbeelink.vi"/>
 		<Item Name="Chassis" Type="myRIO Chassis">
@@ -1696,6 +1696,7 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="SVE variables.lvlib" Type="Library" URL="../SVE variables.lvlib"/>
 		<Item Name="TUNA parse comms string.vi" Type="VI" URL="../TUNA parse comms string.vi"/>
+		<Item Name="TUNA TAIL hindbrain ACT.vi" Type="VI" URL="../TUNA TAIL hindbrain ACT.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
