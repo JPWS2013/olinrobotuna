@@ -1634,6 +1634,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Build Specifications" Type="Build"/>
 			</Item>
 		</Item>
+		<Item Name="FollowBeeCircle.vi" Type="VI" URL="../FollowBeeCircle.vi"/>
 		<Item Name="FP RT main.vi" Type="VI" URL="../FP RT main.vi"/>
 		<Item Name="ProximalSpeedAdjust.vi" Type="VI" URL="../ProximalSpeedAdjust.vi"/>
 		<Item Name="SVE variables.lvlib" Type="Library" URL="../SVE variables.lvlib"/>
