@@ -4,6 +4,7 @@
 	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Property Name="SMProvider.SMVersion" Type="Int">201310</Property>
 	<Property Name="varPersistentID:{C79B968F-3A8A-4228-9CF2-6094753D2509}" Type="Ref">/CHRISTINE/SVE variables.lvlib/MDF</Property>
+	<Property Name="varPersistentID:{CE22B40F-6797-4EF6-A070-1D30ECEDCD19}" Type="Ref">/CHRISTINE/SVE variables.lvlib/Tried Docking?</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="IOScan.Faults" Type="Str"></Property>
 		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
@@ -1634,7 +1635,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Build Specifications" Type="Build"/>
 			</Item>
 		</Item>
-		<Item Name="FollowBeeCircle.vi" Type="VI" URL="../FollowBeeCircle.vi"/>
+		<Item Name="DockingLine.vi" Type="VI" URL="../DockingLine.vi"/>
 		<Item Name="FP RT main.vi" Type="VI" URL="../FP RT main.vi"/>
 		<Item Name="ProximalSpeedAdjust.vi" Type="VI" URL="../ProximalSpeedAdjust.vi"/>
 		<Item Name="SVE variables.lvlib" Type="Library" URL="../SVE variables.lvlib"/>
@@ -1762,6 +1763,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Waveform Array To Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Waveform Array To Dynamic.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="FollowBeeCircle.vi" Type="VI" URL="../FollowBeeCircle.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
