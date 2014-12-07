@@ -180,6 +180,7 @@ AddOutputFilter chunkFilter
 			<Item Name="FP midbrain SENSE.vi" Type="VI" URL="../FP midbrain SENSE.vi"/>
 			<Item Name="FP midbrain THINK.vi" Type="VI" URL="../FP midbrain THINK.vi"/>
 		</Item>
+		<Item Name="BoxcarAverage.vi" Type="VI" URL="../BoxcarAverage.vi"/>
 		<Item Name="Chassis" Type="myRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
