@@ -40,6 +40,7 @@
 		</Item>
 		<Item Name="FP PC base station demo.vi" Type="VI" URL="../FP PC base station demo.vi"/>
 		<Item Name="FP PC main.vi" Type="VI" URL="../FP PC main.vi"/>
+		<Item Name="LoadMDF.vi" Type="VI" URL="../LoadMDF.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -101,7 +102,6 @@
 			<Item Name="FP parse navigation string.vi" Type="VI" URL="../FP parse navigation string.vi"/>
 			<Item Name="FP parse the data.vi" Type="VI" URL="../FP parse the data.vi"/>
 			<Item Name="FP time to string.vi" Type="VI" URL="../FP time to string.vi"/>
-			<Item Name="LoadMDF.vi" Type="VI" URL="../LoadMDF.vi"/>
 			<Item Name="nivision.dll" Type="Document" URL="nivision.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -222,7 +222,6 @@ AddOutputFilter chunkFilter
 			<Item Name="FP midbrain THINK.vi" Type="VI" URL="../FP midbrain THINK.vi"/>
 		</Item>
 		<Item Name="BoxcarAverage.vi" Type="VI" URL="../BoxcarAverage.vi"/>
-		<Item Name="BoxcarAverageBSPeed.vi" Type="VI" URL="../BoxcarAverageBSPeed.vi"/>
 		<Item Name="Chassis" Type="myRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
@@ -1806,6 +1805,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Waveform Array To Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Waveform Array To Dynamic.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="BoxcarAverageBSPeed.vi" Type="VI" URL="../BoxcarAverageBSPeed.vi"/>
 			<Item Name="FollowBeeCircle.vi" Type="VI" URL="../FollowBeeCircle.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
