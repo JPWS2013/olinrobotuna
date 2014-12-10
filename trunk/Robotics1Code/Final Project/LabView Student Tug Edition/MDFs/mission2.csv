@@ -1,11 +1,10 @@
 Start,0,0,0,Open Water Transit
-Waypoint,270,720,4,Open Water Transit
-Waypoint,65,365,4,Open Water Transit
-Waypoint,770,870,4,P-Wall Follow
-Waypoint,580,760,4,Open Water Transit
-Waypoint,640,600,4,Open Water Transit
-Waypoint,850,690,4,Open Water Transit
-Waypoint,740,880,4,Open Water Transit
-Waypoint,435,800,4,Open Water Transit
-Waypoint,120,590,4,Open Water Transit
+Waypoint,212,770,5,Open Water Transit
+Waypoint,128,527,4,Open Water Transit
+Waypoint,131,338,3,Open Water Transit
+Waypoint,883,887,5,P-Wall Follow
+Waypoint,566,743,5,Open Water Transit
+Waypoint,866,737,5,Open Water Transit
+Waypoint,380,637,6,Open Water Transit
+Waypoint,59,430,4,Open Water Transit
 End,0,0,0,Open Water Transit

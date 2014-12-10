@@ -41,6 +41,7 @@
 		<Item Name="FP PC base station demo.vi" Type="VI" URL="../FP PC base station demo.vi"/>
 		<Item Name="FP PC main.vi" Type="VI" URL="../FP PC main.vi"/>
 		<Item Name="LoadMDF.vi" Type="VI" URL="../LoadMDF.vi"/>
+		<Item Name="PlotWaylines.vi" Type="VI" URL="../PlotWaylines.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -1679,6 +1680,7 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="DockingLine.vi" Type="VI" URL="../DockingLine.vi"/>
+		<Item Name="FP at the waypointv2.vi" Type="VI" URL="../FP at the waypointv2.vi"/>
 		<Item Name="FP RT main.vi" Type="VI" URL="../FP RT main.vi"/>
 		<Item Name="OrderSensors.vi" Type="VI" URL="../OrderSensors.vi"/>
 		<Item Name="ProximalSpeedAdjust.vi" Type="VI" URL="../ProximalSpeedAdjust.vi"/>
