@@ -116,7 +116,7 @@
 	<Item Name="CHRISTINE" Type="RT myRIO">
 		<Property Name="alias.name" Type="Str">CHRISTINE</Property>
 		<Property Name="alias.value" Type="Str">192.168.1.8</Property>
-		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,ARM;DeviceCode,762F;</Property>
+		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,ARM;DeviceCode,762F;FPGAPersonality,myRIO_FP_Custom;</Property>
 		<Property Name="crio.ControllerPID" Type="Str">762F</Property>
 		<Property Name="host.ResponsivenessCheckEnabled" Type="Bool">true</Property>
 		<Property Name="host.ResponsivenessCheckPingDelay" Type="UInt">5000</Property>
@@ -224,6 +224,7 @@ AddOutputFilter chunkFilter
 			<Item Name="FP midbrain THINK.vi" Type="VI" URL="../FP midbrain THINK.vi"/>
 		</Item>
 		<Item Name="BoxcarAverage.vi" Type="VI" URL="../BoxcarAverage.vi"/>
+		<Item Name="Chase Boat.vi" Type="VI" URL="../Chase Boat.vi"/>
 		<Item Name="Chassis" Type="myRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
