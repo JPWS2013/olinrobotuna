@@ -1,10 +1,9 @@
 Start,0,0,0,Open Water Transit
-Waypoint,213,792,6,Open Water Transit
+Waypoint,213,792,4,Open Water Transit
 Waypoint,180,520,6,Open Water Transit
-Waypoint,197,321,6,Open Water Transit
+Waypoint,166,304,6,Open Water Transit
 Waypoint,460,560,6,Open Water Transit
 Waypoint,656,803,6,Open Water Transit
 Waypoint,775,672,6,Open Water Transit
-Waypoint,470,580,6,Open Water Transit
-Waypoint,90,590,6,Open Water Transit
+Waypoint,90,590,10,Open Water Transit
 End,0,0,0,Open Water Transit
