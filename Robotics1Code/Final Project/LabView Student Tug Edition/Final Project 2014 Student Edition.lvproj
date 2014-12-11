@@ -192,7 +192,11 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="FB sub VIs" Type="Folder">
+			<Item Name="BoxcarAverage.vi" Type="VI" URL="../BoxcarAverage.vi"/>
+			<Item Name="Chase Boat.vi" Type="VI" URL="../Chase Boat.vi"/>
+			<Item Name="DockingLine.vi" Type="VI" URL="../DockingLine.vi"/>
 			<Item Name="FP at the waypoint.vi" Type="VI" URL="../FP at the waypoint.vi"/>
+			<Item Name="FP at the waypointv2.vi" Type="VI" URL="../FP at the waypointv2.vi"/>
 			<Item Name="FP behavior FWD obstacle avoidance.vi" Type="VI" URL="../FP behavior FWD obstacle avoidance.vi"/>
 			<Item Name="FP behavior P-Wall.vi" Type="VI" URL="../FP behavior P-Wall.vi"/>
 			<Item Name="FP calculate compass heading.vi" Type="VI" URL="../FP calculate compass heading.vi"/>
@@ -203,6 +207,8 @@ AddOutputFilter chunkFilter
 			<Item Name="FP parse  time string.vi" Type="VI" URL="../FP parse  time string.vi"/>
 			<Item Name="FP parse navigation string.vi" Type="VI" URL="../FP parse navigation string.vi"/>
 			<Item Name="FP parse the data.vi" Type="VI" URL="../FP parse the data.vi"/>
+			<Item Name="OrderSensors.vi" Type="VI" URL="../OrderSensors.vi"/>
+			<Item Name="ProximalSpeedAdjust.vi" Type="VI" URL="../ProximalSpeedAdjust.vi"/>
 			<Item Name="SE FP behavior point to dock.vi" Type="VI" URL="../SE FP behavior point to dock.vi"/>
 			<Item Name="SE FP behavior S-Wall.vi" Type="VI" URL="../SE FP behavior S-Wall.vi"/>
 			<Item Name="SE FP Find red target.vi" Type="VI" URL="../SE FP Find red target.vi"/>
@@ -223,15 +229,13 @@ AddOutputFilter chunkFilter
 			<Item Name="FP midbrain SENSE.vi" Type="VI" URL="../FP midbrain SENSE.vi"/>
 			<Item Name="FP midbrain THINK.vi" Type="VI" URL="../FP midbrain THINK.vi"/>
 		</Item>
-		<Item Name="BoxcarAverage.vi" Type="VI" URL="../BoxcarAverage.vi"/>
-		<Item Name="Chase Boat.vi" Type="VI" URL="../Chase Boat.vi"/>
 		<Item Name="Chassis" Type="myRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
 			<Property Name="crio.Type" Type="Str">myRIO-1900</Property>
 			<Item Name="FPGA Target 2" Type="FPGA Target">
 				<Property Name="AutoRun" Type="Bool">false</Property>
-				<Property Name="configString.guid" Type="Str">{056A8628-9C45-4888-AF8D-78140FCAF995}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO15;0;ReadMethodType=bool;WriteMethodType=bool{06AE004D-0B0A-4AB9-9907-650468EC765C}resource=/ConnectorB/AI2;0;ReadMethodType=U16{0D0F353A-DB16-4D3E-8EF7-5347C9654861}resource=/ConnectorB/AI0;0;ReadMethodType=U16{1127391E-E4E5-4AC6-B511-C2064133C9EB}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO0;0;ReadMethodType=bool;WriteMethodType=bool{1F134D12-916D-4357-A124-42F2C340AD1C}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO5;0;ReadMethodType=bool;WriteMethodType=bool{21BE2E50-0C90-49A6-A0C0-2FFF79C57CB1}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO7;0;ReadMethodType=bool;WriteMethodType=bool{28C27A2A-0F29-4F15-B2E7-66E0A20690A9}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO6;0;ReadMethodType=bool;WriteMethodType=bool{2997A10D-7553-43D8-85F8-4139ED15FFA3}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO12;0;ReadMethodType=bool;WriteMethodType=bool{2CEA0A8D-B272-4CDC-9ECC-439CEAB961FC}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO14;0;ReadMethodType=bool;WriteMethodType=bool{302AFAA3-549B-4BF8-ADC1-BA5A88F746F5}resource=/Audio/AudioOut\/Left;0;WriteMethodType=I16{345BD9DD-6D5B-405B-AEF9-18EFD5AFFCB7}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO1;0;ReadMethodType=bool;WriteMethodType=bool{38FD1277-1F7A-414C-9782-347DC5B6310A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO4;0;ReadMethodType=bool;WriteMethodType=bool{3C38C4E4-FAB8-42ED-B7E7-ED3D54D62A46}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO7;0;ReadMethodType=bool;WriteMethodType=bool{3DFDB1C6-D2FE-4F1F-9FC4-9D51B7B909C0}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO14;0;ReadMethodType=bool;WriteMethodType=bool{407B5061-F711-4581-B598-1A2EFEFAF6F5}resource=/ConnectorA/AO0;0;WriteMethodType=U16{492F755C-FD34-4EC0-8183-38CD90CE4DA2}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO2;0;ReadMethodType=bool;WriteMethodType=bool{4AA41BBA-1F66-499D-A481-25F4FA768BCB}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8{4C9FCD0A-1E89-4052-AA6D-E2ACACA0F53B}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO15:8;0;ReadMethodType=u8;WriteMethodType=u8{523B51C3-F1E0-4821-9178-390D2D3ECF7A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO1;0;ReadMethodType=bool;WriteMethodType=bool{5289E060-696A-423B-BE2E-4F0A50E1272E}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO5;0;ReadMethodType=bool;WriteMethodType=bool{53C67CA4-10DF-4AB6-BED1-990D32DB916A}resource=/ConnectorB/AO0;0;WriteMethodType=U16{5D37E514-CAB1-4088-AC81-4DE26A97B306}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO15:8;0;ReadMethodType=u8;WriteMethodType=u8{60FEBD89-1D89-457D-BC2A-C1BDADB831CC}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO4;0;ReadMethodType=bool;WriteMethodType=bool{627D4AA5-5E22-4CDD-A4EA-64C6C2D937F6}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO11;0;ReadMethodType=bool;WriteMethodType=bool{65FA41FF-D928-494D-839C-32D06A78FC83}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO9;0;ReadMethodType=bool;WriteMethodType=bool{716CD73C-FA2C-4998-A8AE-6F65A3F567F5}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E;{7251E29E-8679-4B51-BD0F-B36EBB3CFE5D}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO7;0;ReadMethodType=bool;WriteMethodType=bool{74E9F225-E75C-4A6C-B61A-E83873B0A370}resource=/ConnectorA/AI1;0;ReadMethodType=U16{76F41000-0622-4A87-A5C7-074122B45953}resource=/ConnectorC/AI1;0;ReadMethodType=I16{7AFADD4C-617E-40A1-882B-CD50E224FE54}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8{7F9C0DF3-75BF-4866-9E58-DD368A556E4F}resource=/Audio/AudioIn\/Right;0;ReadMethodType=I16{806022CA-2B61-4E66-BEA7-58F25769F26B}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO10;0;ReadMethodType=bool;WriteMethodType=bool{85BC4779-587C-4175-802F-2FCCE4EB9C90}resource=/AccelerationZ;0;ReadMethodType=I16{8A03860C-C0FB-4EED-9C10-A5D304CFE6DF}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO3;0;ReadMethodType=bool;WriteMethodType=bool{8A981730-54D7-4384-B654-A35E6130F2DE}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO13;0;ReadMethodType=bool;WriteMethodType=bool{8DA9B102-06CF-4105-A116-0E97BC44931E}NumberOfSyncRegistersForReadInProject=Auto;resource=/Button0;0;ReadMethodType=bool{950D1956-C164-4AB1-8D27-BDDF537BE02A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO6;0;ReadMethodType=bool;WriteMethodType=bool{9EB7E5D4-CACA-47CB-BD9D-97B906DA99B6}resource=/ConnectorA/AI3;0;ReadMethodType=U16{A2C07EFD-3A5B-47D6-AF73-53270A73A97F}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO11;0;ReadMethodType=bool;WriteMethodType=bool{A628D0BF-64DD-49FF-942D-BEC06F5EF9AD}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO13;0;ReadMethodType=bool;WriteMethodType=bool{A9E52A5B-8A36-4411-A33C-62466E1A2AD9}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO0;0;ReadMethodType=bool;WriteMethodType=bool{AC65EDB6-C654-498B-8268-3664FCF9E5E3}resource=/Audio/AudioIn\/Left;0;ReadMethodType=I16{AFCC65A6-7C81-4A4C-AE62-C244118F0723}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO8;0;ReadMethodType=bool;WriteMethodType=bool{B1FFA424-5AEC-4158-BD6A-48FAE2DDAC85}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO6;0;ReadMethodType=bool;WriteMethodType=bool{B3EC1664-66D6-40BC-AFDD-30EF8C679841}resource=/ConnectorA/AO1;0;WriteMethodType=U16{BBE6D228-D662-4AC0-A879-C6F3EAC2289A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO12;0;ReadMethodType=bool;WriteMethodType=bool{BBE9AF58-4EF6-4362-90CC-19BCB5AB57EB}resource=/ConnectorB/AI1;0;ReadMethodType=U16{BC5E2033-F863-43B9-87D6-5C5475204C65}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED3;0;ReadMethodType=bool;WriteMethodType=bool{C0C3BAB9-6074-4014-A3A8-4C33147EC8B8}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO2;0;ReadMethodType=bool;WriteMethodType=bool{C1D9D6BD-1885-4C63-B049-46216C5643BC}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO0;0;ReadMethodType=bool;WriteMethodType=bool{C3E29C6A-3875-4FD6-8FA8-EE47F160F3B9}resource=/System Reset;0;ReadMethodType=bool;WriteMethodType=bool{C4A27C1A-99A5-4914-90D1-AA00CF7764CD}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO2;0;ReadMethodType=bool;WriteMethodType=bool{C52CF731-1E0C-446D-8FDB-C35E5FCCACC5}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO4;0;ReadMethodType=bool;WriteMethodType=bool{C6D7D84B-E325-4204-AC19-8AEBEA75839B}resource=/AccelerationX;0;ReadMethodType=I16{C74B72DE-9BC2-47AD-9FB1-6E3C9B937582}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO3;0;ReadMethodType=bool;WriteMethodType=bool{C9FB7C04-DA5F-4A6E-8CEC-CBEADD684E42}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED2;0;ReadMethodType=bool;WriteMethodType=bool{CA37B575-BD62-4D98-B7AA-314843E6E874}resource=/AccelerationY;0;ReadMethodType=I16{CCF6C861-3E54-4109-AF23-66AE901D057E}resource=/ConnectorC/AI0;0;ReadMethodType=I16{D2C4CF60-0550-40BB-B4BC-4DD1426BACBB}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO3;0;ReadMethodType=bool;WriteMethodType=bool{D6F40882-18C4-4CC9-9448-579A5A21F9E0}resource=/ConnectorB/AI3;0;ReadMethodType=U16{DB90D747-4F21-4219-9F98-1B689D523576}resource=/ConnectorC/AO0;0;WriteMethodType=I16{DE2281C0-3D32-4827-A732-1D6D18D2961A}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED1;0;ReadMethodType=bool;WriteMethodType=bool{E0E2EF91-593D-4692-9BDD-5CA85F8D7EFE}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO9;0;ReadMethodType=bool;WriteMethodType=bool{E17BFD18-E33A-4F17-8A53-0B4567AE5F2B}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO15;0;ReadMethodType=bool;WriteMethodType=bool{E3A98D27-0592-44F4-AEE5-225252074ED9}resource=/ConnectorC/AO1;0;WriteMethodType=I16{E5E16511-78A9-46DB-8EBC-6C2519D9177A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8{E6882F63-589B-4B9D-9DF2-FFD422E32520}resource=/ConnectorB/AO1;0;WriteMethodType=U16{E72207A1-9BF8-4E9D-92AF-3655FB4BE228}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO1;0;ReadMethodType=bool;WriteMethodType=bool{E8DC69FC-55A6-4297-BDAF-D54E55FE97C1}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO10;0;ReadMethodType=bool;WriteMethodType=bool{ED2949B7-2076-42F8-88D4-E878A3BC5D3E}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO5;0;ReadMethodType=bool;WriteMethodType=bool{EDE9C17B-4602-4045-A933-169CEF5116BD}resource=/Scan Clock;0;ReadMethodType=bool{F12D8A9B-5F72-488F-AE3E-A971B0A38E01}resource=/Audio/AudioOut\/Right;0;WriteMethodType=I16{F54C6A6E-BF4C-485A-AEC9-3DD601519009}resource=/ConnectorA/AI0;0;ReadMethodType=U16{FCA63012-94EE-456F-8C2E-4B321B902AFA}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED0;0;ReadMethodType=bool;WriteMethodType=bool{FD647278-6E99-4B39-9E6F-D727F2710DEA}resource=/ConnectorA/AI2;0;ReadMethodType=U16{FECE6A69-8F3F-4497-9E56-3ECC54995D73}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO8;0;ReadMethodType=bool;WriteMethodType=boolmyRIO-1900/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSMYRIO_1900FPGA_TARGET_FAMILYZYNQTARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]</Property>
+				<Property Name="configString.guid" Type="Str">{01487CF5-2483-4D96-84A4-FFF5ADD13AEE}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO2;0;ReadMethodType=bool;WriteMethodType=bool{08E6CC29-BCB7-46F8-A245-FAA76E979820}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO3;0;ReadMethodType=bool;WriteMethodType=bool{0CE00138-3917-4F31-81BA-60DEF6AD08DC}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO2;0;ReadMethodType=bool;WriteMethodType=bool{14FD0899-FA5A-4C38-A063-7BFCECC4F6AD}ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E;{151852CE-4130-4FE3-8FF1-815DBB543DA5}resource=/AccelerationZ;0;ReadMethodType=I16{1687E604-F2FC-4DC7-AC92-CD6F9B40855D}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO4;0;ReadMethodType=bool;WriteMethodType=bool{1A47A49A-5186-4F44-9BD9-C994A72F838D}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO12;0;ReadMethodType=bool;WriteMethodType=bool{1E686492-D7CC-4448-9D12-4F110726582E}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED0;0;ReadMethodType=bool;WriteMethodType=bool{1E959A8C-498F-4818-9424-64159648D7D4}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED2;0;ReadMethodType=bool;WriteMethodType=bool{1EF25BBF-3147-452E-8412-1F093E2A128A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO10;0;ReadMethodType=bool;WriteMethodType=bool{262AEDE3-EC3D-4731-9324-8B9350288954}resource=/ConnectorA/AI1;0;ReadMethodType=U16{27F27DEC-3518-47FE-BF48-3395817464B9}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO1;0;ReadMethodType=bool;WriteMethodType=bool{2D8B80E5-BFB6-4ADD-981E-B05036DEAF2B}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO2;0;ReadMethodType=bool;WriteMethodType=bool{2DBFF853-9228-4D1D-B2F2-DBEB1749DF5C}resource=/ConnectorA/AI3;0;ReadMethodType=U16{2E05674D-0526-4844-8483-FB465E14E600}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO13;0;ReadMethodType=bool;WriteMethodType=bool{317CD3DC-B463-4F27-9843-16673B903D00}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO7;0;ReadMethodType=bool;WriteMethodType=bool{344EF168-EF6C-4092-8E4C-AC08BCCAB5BC}resource=/ConnectorB/AO1;0;WriteMethodType=U16{3460196F-AFDB-4DAD-9D7E-84FDC04F66A8}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO0;0;ReadMethodType=bool;WriteMethodType=bool{35CAD7A9-271C-4575-86D2-6FF2686A6EC4}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED3;0;ReadMethodType=bool;WriteMethodType=bool{36B742A1-95CD-44B8-8EA0-E5ABECD1EBC2}resource=/ConnectorC/AO1;0;WriteMethodType=I16{3B73E8C0-EB92-4022-B46D-6B55EB0E128E}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO6;0;ReadMethodType=bool;WriteMethodType=bool{5102A800-3805-46E6-84A8-A89B44C653FA}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8{526974B7-8E87-4326-8A3D-B4354F273CDB}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO0;0;ReadMethodType=bool;WriteMethodType=bool{550EE96E-2844-4AD6-850E-B773AE95F44F}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO9;0;ReadMethodType=bool;WriteMethodType=bool{57B24E60-66AA-4E70-A69F-57D4611446D5}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO8;0;ReadMethodType=bool;WriteMethodType=bool{5C5E68E1-7226-4DB7-851E-1BFB5FE4DADA}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO7;0;ReadMethodType=bool;WriteMethodType=bool{5D8F30D8-A10D-4834-8D2D-2BB2680B19A4}resource=/ConnectorB/AI3;0;ReadMethodType=U16{5F2C7EE8-447B-4CF5-82E4-CBDEDEA3D61C}resource=/Audio/AudioOut\/Left;0;WriteMethodType=I16{617950E3-CC22-43B8-86E0-46BE8449FCBE}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO14;0;ReadMethodType=bool;WriteMethodType=bool{629E24E6-BADB-4FB8-87DE-2A59A2C00630}ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED1;0;ReadMethodType=bool;WriteMethodType=bool{65209D87-A621-42C2-B1B3-1823E44F68ED}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO7;0;ReadMethodType=bool;WriteMethodType=bool{6E79FC93-9A6D-4F93-B5D0-17ED9F1DCD25}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO3;0;ReadMethodType=bool;WriteMethodType=bool{714D2DB0-C718-4297-9926-91617DA8F60E}resource=/Audio/AudioIn\/Right;0;ReadMethodType=I16{71A89E0E-51F7-4CB2-BF08-010A7F98F86D}resource=/ConnectorC/AI1;0;ReadMethodType=I16{72EE418F-8089-4F51-AAC2-EC01058624DD}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO4;0;ReadMethodType=bool;WriteMethodType=bool{73339254-129A-4C0F-9F68-C2587F8F8DD2}resource=/ConnectorA/AO0;0;WriteMethodType=U16{840C088A-BEE0-4EE3-9AED-62F1BF6C1847}resource=/ConnectorB/AI1;0;ReadMethodType=U16{850A89F5-9DBC-4AD9-858B-9B8577AD4082}resource=/Scan Clock;0;ReadMethodType=bool{869AEA16-D3F0-43E3-BDC4-B3F29A097C7F}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO8;0;ReadMethodType=bool;WriteMethodType=bool{88A90343-C505-42C6-B40F-7026E0251FA4}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO11;0;ReadMethodType=bool;WriteMethodType=bool{8B16F4CE-3627-4D97-B7F0-28E5F9E4030C}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO5;0;ReadMethodType=bool;WriteMethodType=bool{919DAB13-59B6-4AA0-A26D-BAAE07812283}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO5;0;ReadMethodType=bool;WriteMethodType=bool{937A988D-0706-42E6-BBBD-F5DA56C86E07}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO15;0;ReadMethodType=bool;WriteMethodType=bool{99C5B898-0879-4F8B-B6F9-EA08AD796BE8}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO1;0;ReadMethodType=bool;WriteMethodType=bool{9CAC9FAD-E4B4-44F3-AB44-88374166A19A}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO11;0;ReadMethodType=bool;WriteMethodType=bool{9CDAE1B1-EAD8-474B-8A70-69922474F87D}resource=/ConnectorA/AI2;0;ReadMethodType=U16{9F3FFF2B-969C-47A4-8F39-3594B6A647B6}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO0;0;ReadMethodType=bool;WriteMethodType=bool{AC3C2977-87CF-4DE4-8020-B77C918D34B4}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO5;0;ReadMethodType=bool;WriteMethodType=bool{B0423232-AEE4-453F-A054-5E54405DB116}resource=/ConnectorC/AO0;0;WriteMethodType=I16{B20EF480-84A9-4207-A1C2-8CD4A04E3782}NumberOfSyncRegistersForReadInProject=Auto;resource=/Button0;0;ReadMethodType=bool{B4FD627A-F7C0-4AAF-B936-655758F7CDD3}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO12;0;ReadMethodType=bool;WriteMethodType=bool{B73AC79B-ADBD-4AA2-AF90-2EC083C66825}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO9;0;ReadMethodType=bool;WriteMethodType=bool{B880FE9C-4BE3-4F3A-B272-E25113C4FC41}resource=/ConnectorA/AO1;0;WriteMethodType=U16{BCBD59F9-74E6-4130-A0A3-190AB7271EFF}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO3;0;ReadMethodType=bool;WriteMethodType=bool{BE069406-F89D-463C-BC79-9AFAD2EEDB53}resource=/ConnectorB/AO0;0;WriteMethodType=U16{BE30CF7A-A9AD-45D2-86F1-522D3DFA7215}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO6;0;ReadMethodType=bool;WriteMethodType=bool{C174E432-7C8D-41CC-A228-D02CE493B3D2}resource=/System Reset;0;ReadMethodType=bool;WriteMethodType=bool{C8DD7D8C-57B0-4BE6-B32B-29902EE91FA7}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8{D170FC3E-AD60-4562-80B3-2D1908983662}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO1;0;ReadMethodType=bool;WriteMethodType=bool{D1E23BE0-DBA3-4CA8-9504-8065B556E32B}resource=/ConnectorB/AI2;0;ReadMethodType=U16{D291E316-9C48-4C4C-B9DD-64B7805A88C7}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO6;0;ReadMethodType=bool;WriteMethodType=bool{D3772E40-5F98-473A-B0DE-616DB7DE6F37}resource=/Audio/AudioOut\/Right;0;WriteMethodType=I16{D8BEC435-5956-494A-B440-3F7A2899CCAC}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO15:8;0;ReadMethodType=u8;WriteMethodType=u8{DA2882A9-6D10-4CD9-A774-A77D8ABA6961}resource=/ConnectorC/AI0;0;ReadMethodType=I16{E70DD564-5803-4B86-B948-EB96FAB0C90B}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO15;0;ReadMethodType=bool;WriteMethodType=bool{EA06C14C-BB2E-40C5-A0A3-B4FE9AEFFF40}resource=/ConnectorB/AI0;0;ReadMethodType=U16{EAFF20F7-6BCA-4A9E-BEE9-294897CB04E5}resource=/AccelerationX;0;ReadMethodType=I16{EC905601-3C8E-4EA6-83E8-7EF831FCCE28}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO13;0;ReadMethodType=bool;WriteMethodType=bool{ED4D9E3F-DBDE-4198-87CD-55467D9CB666}resource=/Audio/AudioIn\/Left;0;ReadMethodType=I16{F1E6DE64-782C-4CF9-98B5-081D620070AA}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8{F2931C6C-FFEE-4375-820B-7DC96D9EC30E}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO10;0;ReadMethodType=bool;WriteMethodType=bool{F3BA4D02-3898-46C1-AF9B-CA5D531FE1EC}resource=/AccelerationY;0;ReadMethodType=I16{F5302E96-01EB-4238-8E7C-57BE07180E6D}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO4;0;ReadMethodType=bool;WriteMethodType=bool{F60E1F6E-E114-4BAE-900A-AD1060449AC7}resource=/ConnectorA/AI0;0;ReadMethodType=U16{F67F9068-2ED3-4BE4-B7D3-33CC483BCD6C}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO14;0;ReadMethodType=bool;WriteMethodType=bool{FFFD4792-50B2-4801-8FA4-FF943FEE46A2}ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO15:8;0;ReadMethodType=u8;WriteMethodType=u8myRIO-1900/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSMYRIO_1900FPGA_TARGET_FAMILYZYNQTARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]</Property>
 				<Property Name="configString.name" Type="Str">40 MHz Onboard ClockResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E;AccelerationXresource=/AccelerationX;0;ReadMethodType=I16AccelerationYresource=/AccelerationY;0;ReadMethodType=I16AccelerationZresource=/AccelerationZ;0;ReadMethodType=I16AudioIn/Leftresource=/Audio/AudioIn\/Left;0;ReadMethodType=I16AudioIn/Rightresource=/Audio/AudioIn\/Right;0;ReadMethodType=I16AudioOut/Leftresource=/Audio/AudioOut\/Left;0;WriteMethodType=I16AudioOut/Rightresource=/Audio/AudioOut\/Right;0;WriteMethodType=I16Button0NumberOfSyncRegistersForReadInProject=Auto;resource=/Button0;0;ReadMethodType=boolConnectorA/AI0resource=/ConnectorA/AI0;0;ReadMethodType=U16ConnectorA/AI1resource=/ConnectorA/AI1;0;ReadMethodType=U16ConnectorA/AI2resource=/ConnectorA/AI2;0;ReadMethodType=U16ConnectorA/AI3resource=/ConnectorA/AI3;0;ReadMethodType=U16ConnectorA/AO0resource=/ConnectorA/AO0;0;WriteMethodType=U16ConnectorA/AO1resource=/ConnectorA/AO1;0;WriteMethodType=U16ConnectorA/DIO0ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO0;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO10ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO10;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO11ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO11;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO12ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO12;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO13ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO13;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO14ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO14;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO15:8ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO15:8;0;ReadMethodType=u8;WriteMethodType=u8ConnectorA/DIO15ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO15;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO1ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO1;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO2ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO2;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO3ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO3;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO4ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO4;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO5ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO5;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO6ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO6;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO7:0ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8ConnectorA/DIO7ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO7;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO8ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO8;0;ReadMethodType=bool;WriteMethodType=boolConnectorA/DIO9ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorA/DIO9;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/AI0resource=/ConnectorB/AI0;0;ReadMethodType=U16ConnectorB/AI1resource=/ConnectorB/AI1;0;ReadMethodType=U16ConnectorB/AI2resource=/ConnectorB/AI2;0;ReadMethodType=U16ConnectorB/AI3resource=/ConnectorB/AI3;0;ReadMethodType=U16ConnectorB/AO0resource=/ConnectorB/AO0;0;WriteMethodType=U16ConnectorB/AO1resource=/ConnectorB/AO1;0;WriteMethodType=U16ConnectorB/DIO0ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO0;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO10ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO10;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO11ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO11;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO12ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO12;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO13ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO13;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO14ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO14;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO15:8ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO15:8;0;ReadMethodType=u8;WriteMethodType=u8ConnectorB/DIO15ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO15;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO1ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO1;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO2ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO2;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO3ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO3;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO4ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO4;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO5ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO5;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO6ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO6;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO7:0ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8ConnectorB/DIO7ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO7;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO8ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO8;0;ReadMethodType=bool;WriteMethodType=boolConnectorB/DIO9ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorB/DIO9;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/AI0resource=/ConnectorC/AI0;0;ReadMethodType=I16ConnectorC/AI1resource=/ConnectorC/AI1;0;ReadMethodType=I16ConnectorC/AO0resource=/ConnectorC/AO0;0;WriteMethodType=I16ConnectorC/AO1resource=/ConnectorC/AO1;0;WriteMethodType=I16ConnectorC/DIO0ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO0;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO1ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO1;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO2ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO2;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO3ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO3;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO4ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO4;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO5ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO5;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO6ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO6;0;ReadMethodType=bool;WriteMethodType=boolConnectorC/DIO7:0ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO7:0;0;ReadMethodType=u8;WriteMethodType=u8ConnectorC/DIO7ArbitrationForOutputData=NeverArbitrate;ArbitrationForOutputEnable=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForOutputEnable=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/ConnectorC/DIO7;0;ReadMethodType=bool;WriteMethodType=boolLED0ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED0;0;ReadMethodType=bool;WriteMethodType=boolLED1ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED1;0;ReadMethodType=bool;WriteMethodType=boolLED2ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED2;0;ReadMethodType=bool;WriteMethodType=boolLED3ArbitrationForOutputData=NeverArbitrate;NumberOfSyncRegistersForOutputData=1;NumberOfSyncRegistersForReadInProject=Auto;resource=/LED3;0;ReadMethodType=bool;WriteMethodType=boolmyRIO-1900/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSMYRIO_1900FPGA_TARGET_FAMILYZYNQTARGET_TYPEFPGA/[rSeriesConfig.Begin][rSeriesConfig.End]Scan Clockresource=/Scan Clock;0;ReadMethodType=boolSystem Resetresource=/System Reset;0;ReadMethodType=bool;WriteMethodType=bool</Property>
 				<Property Name="NI.LV.FPGA.CompileConfigString" Type="Str">myRIO-1900/Clk40/falsefalseFPGA_EXECUTION_MODEFPGA_TARGETFPGA_TARGET_CLASSMYRIO_1900FPGA_TARGET_FAMILYZYNQTARGET_TYPEFPGA</Property>
 				<Property Name="NI.LV.FPGA.Version" Type="Int">6</Property>
@@ -247,7 +251,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{AC65EDB6-C654-498B-8268-3664FCF9E5E3}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{ED4D9E3F-DBDE-4198-87CD-55467D9CB666}</Property>
 					</Item>
 					<Item Name="AudioIn/Right" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -256,7 +260,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{7F9C0DF3-75BF-4866-9E58-DD368A556E4F}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{714D2DB0-C718-4297-9926-91617DA8F60E}</Property>
 					</Item>
 					<Item Name="AudioOut/Left" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -265,7 +269,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{302AFAA3-549B-4BF8-ADC1-BA5A88F746F5}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{5F2C7EE8-447B-4CF5-82E4-CBDEDEA3D61C}</Property>
 					</Item>
 					<Item Name="AudioOut/Right" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -274,7 +278,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{F12D8A9B-5F72-488F-AE3E-A971B0A38E01}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{D3772E40-5F98-473A-B0DE-616DB7DE6F37}</Property>
 					</Item>
 				</Item>
 				<Item Name="ConnectorA" Type="Folder">
@@ -286,7 +290,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{F54C6A6E-BF4C-485A-AEC9-3DD601519009}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{F60E1F6E-E114-4BAE-900A-AD1060449AC7}</Property>
 						</Item>
 						<Item Name="ConnectorA/AI1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -295,7 +299,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{74E9F225-E75C-4A6C-B61A-E83873B0A370}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{262AEDE3-EC3D-4731-9324-8B9350288954}</Property>
 						</Item>
 						<Item Name="ConnectorA/AI2" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -304,7 +308,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{FD647278-6E99-4B39-9E6F-D727F2710DEA}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{9CDAE1B1-EAD8-474B-8A70-69922474F87D}</Property>
 						</Item>
 						<Item Name="ConnectorA/AI3" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -313,7 +317,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{9EB7E5D4-CACA-47CB-BD9D-97B906DA99B6}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{2DBFF853-9228-4D1D-B2F2-DBEB1749DF5C}</Property>
 						</Item>
 						<Item Name="ConnectorA/AO0" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -322,7 +326,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{407B5061-F711-4581-B598-1A2EFEFAF6F5}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{73339254-129A-4C0F-9F68-C2587F8F8DD2}</Property>
 						</Item>
 						<Item Name="ConnectorA/AO1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -331,7 +335,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{B3EC1664-66D6-40BC-AFDD-30EF8C679841}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{B880FE9C-4BE3-4F3A-B272-E25113C4FC41}</Property>
 						</Item>
 					</Item>
 					<Item Name="DIO7:0" Type="Folder">
@@ -357,7 +361,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{A9E52A5B-8A36-4411-A33C-62466E1A2AD9}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{526974B7-8E87-4326-8A3D-B4354F273CDB}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -381,7 +385,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{523B51C3-F1E0-4821-9178-390D2D3ECF7A}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{27F27DEC-3518-47FE-BF48-3395817464B9}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO2" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -405,7 +409,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{492F755C-FD34-4EC0-8183-38CD90CE4DA2}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{0CE00138-3917-4F31-81BA-60DEF6AD08DC}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO3" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -429,7 +433,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{C74B72DE-9BC2-47AD-9FB1-6E3C9B937582}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{6E79FC93-9A6D-4F93-B5D0-17ED9F1DCD25}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO4" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -453,7 +457,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{C52CF731-1E0C-446D-8FDB-C35E5FCCACC5}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{1687E604-F2FC-4DC7-AC92-CD6F9B40855D}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO5" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -477,7 +481,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{1F134D12-916D-4357-A124-42F2C340AD1C}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{AC3C2977-87CF-4DE4-8020-B77C918D34B4}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO6" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -501,7 +505,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{950D1956-C164-4AB1-8D27-BDDF537BE02A}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{D291E316-9C48-4C4C-B9DD-64B7805A88C7}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO7" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -525,7 +529,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{3C38C4E4-FAB8-42ED-B7E7-ED3D54D62A46}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{317CD3DC-B463-4F27-9843-16673B903D00}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO7:0" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -549,7 +553,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{4AA41BBA-1F66-499D-A481-25F4FA768BCB}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{C8DD7D8C-57B0-4BE6-B32B-29902EE91FA7}</Property>
 						</Item>
 					</Item>
 					<Item Name="DIO15:8" Type="Folder">
@@ -575,7 +579,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{AFCC65A6-7C81-4A4C-AE62-C244118F0723}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{57B24E60-66AA-4E70-A69F-57D4611446D5}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO9" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -599,7 +603,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E0E2EF91-593D-4692-9BDD-5CA85F8D7EFE}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{550EE96E-2844-4AD6-850E-B773AE95F44F}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO10" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -623,7 +627,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E8DC69FC-55A6-4297-BDAF-D54E55FE97C1}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{1EF25BBF-3147-452E-8412-1F093E2A128A}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO11" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -647,7 +651,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{627D4AA5-5E22-4CDD-A4EA-64C6C2D937F6}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{88A90343-C505-42C6-B40F-7026E0251FA4}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO12" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -671,7 +675,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{BBE6D228-D662-4AC0-A879-C6F3EAC2289A}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{1A47A49A-5186-4F44-9BD9-C994A72F838D}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO13" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -695,7 +699,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{A628D0BF-64DD-49FF-942D-BEC06F5EF9AD}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{2E05674D-0526-4844-8483-FB465E14E600}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO14" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -719,7 +723,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{3DFDB1C6-D2FE-4F1F-9FC4-9D51B7B909C0}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{617950E3-CC22-43B8-86E0-46BE8449FCBE}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO15" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -743,7 +747,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E17BFD18-E33A-4F17-8A53-0B4567AE5F2B}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{E70DD564-5803-4B86-B948-EB96FAB0C90B}</Property>
 						</Item>
 						<Item Name="ConnectorA/DIO15:8" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -767,7 +771,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{4C9FCD0A-1E89-4052-AA6D-E2ACACA0F53B}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{FFFD4792-50B2-4801-8FA4-FF943FEE46A2}</Property>
 						</Item>
 					</Item>
 				</Item>
@@ -780,7 +784,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{0D0F353A-DB16-4D3E-8EF7-5347C9654861}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{EA06C14C-BB2E-40C5-A0A3-B4FE9AEFFF40}</Property>
 						</Item>
 						<Item Name="ConnectorB/AI1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -789,7 +793,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{BBE9AF58-4EF6-4362-90CC-19BCB5AB57EB}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{840C088A-BEE0-4EE3-9AED-62F1BF6C1847}</Property>
 						</Item>
 						<Item Name="ConnectorB/AI2" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -798,7 +802,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{06AE004D-0B0A-4AB9-9907-650468EC765C}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{D1E23BE0-DBA3-4CA8-9504-8065B556E32B}</Property>
 						</Item>
 						<Item Name="ConnectorB/AI3" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -807,7 +811,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{D6F40882-18C4-4CC9-9448-579A5A21F9E0}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{5D8F30D8-A10D-4834-8D2D-2BB2680B19A4}</Property>
 						</Item>
 						<Item Name="ConnectorB/AO0" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -816,7 +820,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{53C67CA4-10DF-4AB6-BED1-990D32DB916A}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{BE069406-F89D-463C-BC79-9AFAD2EEDB53}</Property>
 						</Item>
 						<Item Name="ConnectorB/AO1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -825,7 +829,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E6882F63-589B-4B9D-9DF2-FFD422E32520}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{344EF168-EF6C-4092-8E4C-AC08BCCAB5BC}</Property>
 						</Item>
 					</Item>
 					<Item Name="DIO7:0" Type="Folder">
@@ -851,7 +855,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{1127391E-E4E5-4AC6-B511-C2064133C9EB}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{9F3FFF2B-969C-47A4-8F39-3594B6A647B6}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -875,7 +879,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E72207A1-9BF8-4E9D-92AF-3655FB4BE228}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{D170FC3E-AD60-4562-80B3-2D1908983662}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO2" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -899,7 +903,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{C0C3BAB9-6074-4014-A3A8-4C33147EC8B8}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{2D8B80E5-BFB6-4ADD-981E-B05036DEAF2B}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO3" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -923,7 +927,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{D2C4CF60-0550-40BB-B4BC-4DD1426BACBB}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{08E6CC29-BCB7-46F8-A245-FAA76E979820}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO4" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -947,7 +951,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{60FEBD89-1D89-457D-BC2A-C1BDADB831CC}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{F5302E96-01EB-4238-8E7C-57BE07180E6D}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO5" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -971,7 +975,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{5289E060-696A-423B-BE2E-4F0A50E1272E}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{8B16F4CE-3627-4D97-B7F0-28E5F9E4030C}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO6" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -995,7 +999,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{B1FFA424-5AEC-4158-BD6A-48FAE2DDAC85}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{BE30CF7A-A9AD-45D2-86F1-522D3DFA7215}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO7" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1019,7 +1023,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{7251E29E-8679-4B51-BD0F-B36EBB3CFE5D}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{5C5E68E1-7226-4DB7-851E-1BFB5FE4DADA}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO7:0" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1043,7 +1047,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{7AFADD4C-617E-40A1-882B-CD50E224FE54}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{F1E6DE64-782C-4CF9-98B5-081D620070AA}</Property>
 						</Item>
 					</Item>
 					<Item Name="DIO15:8" Type="Folder">
@@ -1069,7 +1073,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{FECE6A69-8F3F-4497-9E56-3ECC54995D73}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{869AEA16-D3F0-43E3-BDC4-B3F29A097C7F}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO9" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1093,7 +1097,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{65FA41FF-D928-494D-839C-32D06A78FC83}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{B73AC79B-ADBD-4AA2-AF90-2EC083C66825}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO10" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1117,7 +1121,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{806022CA-2B61-4E66-BEA7-58F25769F26B}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{F2931C6C-FFEE-4375-820B-7DC96D9EC30E}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO11" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1141,7 +1145,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{A2C07EFD-3A5B-47D6-AF73-53270A73A97F}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{9CAC9FAD-E4B4-44F3-AB44-88374166A19A}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO12" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1165,7 +1169,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{2997A10D-7553-43D8-85F8-4139ED15FFA3}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{B4FD627A-F7C0-4AAF-B936-655758F7CDD3}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO13" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1189,7 +1193,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{8A981730-54D7-4384-B654-A35E6130F2DE}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{EC905601-3C8E-4EA6-83E8-7EF831FCCE28}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO14" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1213,7 +1217,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{2CEA0A8D-B272-4CDC-9ECC-439CEAB961FC}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{F67F9068-2ED3-4BE4-B7D3-33CC483BCD6C}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO15" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1237,7 +1241,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{056A8628-9C45-4888-AF8D-78140FCAF995}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{937A988D-0706-42E6-BBBD-F5DA56C86E07}</Property>
 						</Item>
 						<Item Name="ConnectorB/DIO15:8" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1261,7 +1265,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{5D37E514-CAB1-4088-AC81-4DE26A97B306}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{D8BEC435-5956-494A-B440-3F7A2899CCAC}</Property>
 						</Item>
 					</Item>
 				</Item>
@@ -1274,7 +1278,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{CCF6C861-3E54-4109-AF23-66AE901D057E}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{DA2882A9-6D10-4CD9-A774-A77D8ABA6961}</Property>
 						</Item>
 						<Item Name="ConnectorC/AI1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1283,7 +1287,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{76F41000-0622-4A87-A5C7-074122B45953}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{71A89E0E-51F7-4CB2-BF08-010A7F98F86D}</Property>
 						</Item>
 						<Item Name="ConnectorC/AO0" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1292,7 +1296,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{DB90D747-4F21-4219-9F98-1B689D523576}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{B0423232-AEE4-453F-A054-5E54405DB116}</Property>
 						</Item>
 						<Item Name="ConnectorC/AO1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1301,7 +1305,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E3A98D27-0592-44F4-AEE5-225252074ED9}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{36B742A1-95CD-44B8-8EA0-E5ABECD1EBC2}</Property>
 						</Item>
 					</Item>
 					<Item Name="DIO7:0" Type="Folder">
@@ -1327,7 +1331,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{C1D9D6BD-1885-4C63-B049-46216C5643BC}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{3460196F-AFDB-4DAD-9D7E-84FDC04F66A8}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO1" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1351,7 +1355,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{345BD9DD-6D5B-405B-AEF9-18EFD5AFFCB7}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{99C5B898-0879-4F8B-B6F9-EA08AD796BE8}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO2" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1375,7 +1379,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{C4A27C1A-99A5-4914-90D1-AA00CF7764CD}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{01487CF5-2483-4D96-84A4-FFF5ADD13AEE}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO3" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1399,7 +1403,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{8A03860C-C0FB-4EED-9C10-A5D304CFE6DF}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{BCBD59F9-74E6-4130-A0A3-190AB7271EFF}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO4" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1423,7 +1427,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{38FD1277-1F7A-414C-9782-347DC5B6310A}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{72EE418F-8089-4F51-AAC2-EC01058624DD}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO5" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1447,7 +1451,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{ED2949B7-2076-42F8-88D4-E878A3BC5D3E}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{919DAB13-59B6-4AA0-A26D-BAAE07812283}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO6" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1471,7 +1475,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{28C27A2A-0F29-4F15-B2E7-66E0A20690A9}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{3B73E8C0-EB92-4022-B46D-6B55EB0E128E}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO7" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1495,7 +1499,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{21BE2E50-0C90-49A6-A0C0-2FFF79C57CB1}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{65209D87-A621-42C2-B1B3-1823E44F68ED}</Property>
 						</Item>
 						<Item Name="ConnectorC/DIO7:0" Type="Elemental IO">
 							<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1519,7 +1523,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-							<Property Name="FPGA.PersistentID" Type="Str">{E5E16511-78A9-46DB-8EBC-6C2519D9177A}</Property>
+							<Property Name="FPGA.PersistentID" Type="Str">{5102A800-3805-46E6-84A8-A89B44C653FA}</Property>
 						</Item>
 					</Item>
 				</Item>
@@ -1531,7 +1535,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{C6D7D84B-E325-4204-AC19-8AEBEA75839B}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{EAFF20F7-6BCA-4A9E-BEE9-294897CB04E5}</Property>
 					</Item>
 					<Item Name="AccelerationY" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1540,7 +1544,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{CA37B575-BD62-4D98-B7AA-314843E6E874}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{F3BA4D02-3898-46C1-AF9B-CA5D531FE1EC}</Property>
 					</Item>
 					<Item Name="AccelerationZ" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1549,7 +1553,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{85BC4779-587C-4175-802F-2FCCE4EB9C90}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{151852CE-4130-4FE3-8FF1-815DBB543DA5}</Property>
 					</Item>
 					<Item Name="Button0" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1561,7 +1565,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{8DA9B102-06CF-4105-A116-0E97BC44931E}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{B20EF480-84A9-4207-A1C2-8CD4A04E3782}</Property>
 					</Item>
 					<Item Name="LED0" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1579,7 +1583,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{FCA63012-94EE-456F-8C2E-4B321B902AFA}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{1E686492-D7CC-4448-9D12-4F110726582E}</Property>
 					</Item>
 					<Item Name="LED1" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1597,7 +1601,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{DE2281C0-3D32-4827-A732-1D6D18D2961A}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{629E24E6-BADB-4FB8-87DE-2A59A2C00630}</Property>
 					</Item>
 					<Item Name="LED2" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1615,7 +1619,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{C9FB7C04-DA5F-4A6E-8CEC-CBEADD684E42}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{1E959A8C-498F-4818-9424-64159648D7D4}</Property>
 					</Item>
 					<Item Name="LED3" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1633,7 +1637,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{BC5E2033-F863-43B9-87D6-5C5475204C65}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{35CAD7A9-271C-4575-86D2-6FF2686A6EC4}</Property>
 					</Item>
 					<Item Name="Scan Clock" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1642,7 +1646,7 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{EDE9C17B-4602-4045-A933-169CEF5116BD}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{850A89F5-9DBC-4AD9-858B-9B8577AD4082}</Property>
 					</Item>
 					<Item Name="System Reset" Type="Elemental IO">
 						<Property Name="eioAttrBag" Type="Xml"><AttributeSet name="">
@@ -1651,11 +1655,11 @@ AddOutputFilter chunkFilter
    </Attribute>
 </AttributeSet>
 </Property>
-						<Property Name="FPGA.PersistentID" Type="Str">{C3E29C6A-3875-4FD6-8FA8-EE47F160F3B9}</Property>
+						<Property Name="FPGA.PersistentID" Type="Str">{C174E432-7C8D-41CC-A228-D02CE493B3D2}</Property>
 					</Item>
 				</Item>
 				<Item Name="40 MHz Onboard Clock" Type="FPGA Base Clock">
-					<Property Name="FPGA.PersistentID" Type="Str">{716CD73C-FA2C-4998-A8AE-6F65A3F567F5}</Property>
+					<Property Name="FPGA.PersistentID" Type="Str">{14FD0899-FA5A-4C38-A063-7BFCECC4F6AD}</Property>
 					<Property Name="NI.LV.FPGA.BaseTSConfig" Type="Str">ResourceName=40 MHz Onboard Clock;TopSignalConnect=Clk40;ClockSignalName=Clk40;MinFreq=40000000.000000;MaxFreq=40000000.000000;VariableFreq=0;NomFreq=40000000.000000;PeakPeriodJitter=250.000000;MinDutyCycle=50.000000;MaxDutyCycle=50.000000;Accuracy=100.000000;RunTime=0;SpreadSpectrum=0;GenericDataHash=D41D8CD98F00B204E9800998ECF8427E;</Property>
 					<Property Name="NI.LV.FPGA.BaseTSConfig.Accuracy" Type="Dbl">100</Property>
 					<Property Name="NI.LV.FPGA.BaseTSConfig.ClockSignalName" Type="Str">Clk40</Property>
@@ -1680,11 +1684,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Build Specifications" Type="Build"/>
 			</Item>
 		</Item>
-		<Item Name="DockingLine.vi" Type="VI" URL="../DockingLine.vi"/>
-		<Item Name="FP at the waypointv2.vi" Type="VI" URL="../FP at the waypointv2.vi"/>
 		<Item Name="FP RT main.vi" Type="VI" URL="../FP RT main.vi"/>
-		<Item Name="OrderSensors.vi" Type="VI" URL="../OrderSensors.vi"/>
-		<Item Name="ProximalSpeedAdjust.vi" Type="VI" URL="../ProximalSpeedAdjust.vi"/>
 		<Item Name="SVE variables.lvlib" Type="Library" URL="../SVE variables.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">

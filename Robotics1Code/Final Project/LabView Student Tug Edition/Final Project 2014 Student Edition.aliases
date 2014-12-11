@@ -7,8 +7,11 @@ BETH = "192.168.1.6"
 [CHRISTINE]
 CHRISTINE = "192.168.1.8"
 
+[CHRISTINE 2]
+CHRISTINE 2 = "10.0.0.15"
+
 [My Computer]
-My Computer = "10.7.24.25"
+My Computer = "10.7.24.228"
 
 [myRIO-1900]
 myRIO-1900 = "10.0.0.7"
