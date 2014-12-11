@@ -12,9 +12,11 @@
 		<Property Name="Network:UseBinding" Type="Str">False</Property>
 		<Property Name="Network:UseBuffering" Type="Str">True</Property>
 		<Property Name="numTypedefs" Type="UInt">0</Property>
+		<Property Name="Path" Type="Str">/Final Project 2014 Student Edition.lvproj/CHRISTINE/SVE variables.lvlib/</Property>
 		<Property Name="type" Type="Str">Network</Property>
-		<Property Name="typeDesc" Type="Bin">&amp;!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%B(1%!!"1!A!!!!!!(!#&amp;!&amp;A!$"6.U98*U#&amp;&gt;B?8"P;7ZU!U6O:!!!"&amp;2Z='5!!!&gt;!!Q!"7!!(1!-!!6E!#U!$!!64='6F:!"&amp;1"9!""*0='6O)&amp;&gt;B&gt;'6S)&amp;2S97ZT;81.5#V897RM)%:P&lt;'RP&gt;QV4,6&gt;B&lt;'QA2G^M&lt;'^X"%2P9WM!#5*F;'&amp;W;7^S=Q!;1&amp;!!"1!!!!%!!A!$!!1)452')(.F:71!!""!1!!"`````Q!&amp;!UV%2A!"!!9!!!!'!!!!!!$[!!!!_A!!!!!!!!!"!!!"E!!!!'1!!!!5!!%!!1!!!0I!!!$[!!!!&amp;!!!!!%!!!$[!!!"E!!!!"1!!!!"!!!!:!!!!:!!!!!5!!!!!A!!!0I!!!$[!!!!!!!!!!!!!!!!!!!</Property>
+		<Property Name="typeDesc" Type="Bin">&amp;!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%H)Q%!!"1!A!!!!!!(!#&amp;!&amp;A!$"6.U98*U#&amp;&gt;B?8"P;7ZU!U6O:!!!"&amp;2Z='5!!!&gt;!!Q!"7!!(1!-!!6E!#U!$!!64='6F:!",1"9!"2*0='6O)&amp;&gt;B&gt;'6S)&amp;2S97ZT;81.5#V897RM)%:P&lt;'RP&gt;QV4,6&gt;B&lt;'QA2G^M&lt;'^X"%2P9WM&amp;1WBB=W5!#5*F;'&amp;W;7^S=Q!;1&amp;!!"1!!!!%!!A!$!!1)452')(.F:71!!""!1!!"`````Q!&amp;!UV%2A!"!!9!!!!'!!!!!!$[!!!!_A!!!!!!!!!"!!!"E!!!!'1!!!!5!!%!!1!!!0I!!!$[!!!!&amp;!!!!!%!!!$[!!!"E!!!!"1!!!!"!!!!:!!!!:!!!!!5!!!!!A!!!0I!!!$[!!!!!!!!!!!!!!!!!!!</Property>
 	</Item>
+	<Item Name="MDF.ctl" Type="VI" URL="../MDF.ctl"/>
 	<Item Name="Tried Docking?" Type="Variable">
 		<Property Name="featurePacks" Type="Str">Network</Property>
 		<Property Name="Network:UseBinding" Type="Str">False</Property>
