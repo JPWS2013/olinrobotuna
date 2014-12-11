@@ -41,7 +41,6 @@
 		<Item Name="FP PC base station demo.vi" Type="VI" URL="../FP PC base station demo.vi"/>
 		<Item Name="FP PC main.vi" Type="VI" URL="../FP PC main.vi"/>
 		<Item Name="LoadMDF.vi" Type="VI" URL="../LoadMDF.vi"/>
-		<Item Name="PlotWaylines.vi" Type="VI" URL="../PlotWaylines.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -1684,8 +1683,11 @@ AddOutputFilter chunkFilter
 				<Item Name="Build Specifications" Type="Build"/>
 			</Item>
 		</Item>
+		<Item Name="Drop Waypoint.vi" Type="VI" URL="../Drop Waypoint.vi"/>
 		<Item Name="FP RT main.vi" Type="VI" URL="../FP RT main.vi"/>
+		<Item Name="PlotWaylines.vi" Type="VI" URL="../PlotWaylines.vi"/>
 		<Item Name="SVE variables.lvlib" Type="Library" URL="../SVE variables.lvlib"/>
+		<Item Name="TABSpeed.vi" Type="VI" URL="../TABSpeed.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AI Channels Enum.ctl" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/myRIO v1.0/AI/typedefs/AI Channels Enum.ctl"/>
